@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>usersList</title>
+
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            font-family: montserrat;
+            background: linear-gradient(120deg, #2980b9, #8e44ad);
+            height: 100vh;
+            overflow: scroll;
+        }
+        .center{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            background: white;
+            border-radius: 10px;
+        }
+        .center h1{
+            text-align: center;
+            padding: 0 0 20px 0;
+            border-bottom: 1px solid silver;
+        }
+        .center table{
+            padding: 0 40px;
+            box-sizing: border-box;
+        }
+        table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        label{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="center">
+<h1 style="text-align: center">USERS LIST</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Username</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="user : ${listUsers}">
+        <tr>
+           <td>[[${user.Id}]]</td>
+           <td>[[${user.firstname}]]</td>
+            <td>[[${user.lastname}]]</td>
+            <td>[[${user.username}]]</td>
+            <td><a>Edit </a></td>
+            <td><a>Delete</a></td>
+        </tr>
+        </th:block>
+        </tbody>
+    </table>
+    <label><a href="/homePage">Add New User</a></label>
+</div>
+</body>
+</html>

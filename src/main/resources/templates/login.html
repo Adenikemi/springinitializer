@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+</head>
+<body>
+<h1 style="text-align: center">LOGIN PAGE</h1>
+<form action="#" th:action="@{/submitbtn}" method="post" >
+    <label for="username">Username: </label><br>
+    <input id="username" type="text" th:name="Uname" th:required="true" minlength="5" maxlength="45"></input><br><br>
+    <label for="password">Password: </label><br>
+    <input id="password" type="password" th:name="Passwd" th:required="true" minlength="5" maxlength="45"></input><br><br>
+
+    <button type="submit">Login</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button type="reset">reset</button><br><br>
+    <label>Don't have an account? <a href="/HomePage">SignUp</a></label>
+</form>
+</body>
+</html>
